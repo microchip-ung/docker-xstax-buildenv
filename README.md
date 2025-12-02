@@ -2,7 +2,7 @@
 
 The purpose of this Docker image is to be able to build xStaX-based software inside a container running this image.
 
-The image is based on Ubuntu 22.04 LTS.
+The image is based on Ubuntu 20.04 LTS.
 
 In order to use the `dr` script from the [docker-run](https://github.com/microchip-ung/docker-run) repository, a file called `.docker.env` must be present
 somewhere between the current directory and the root of the file system.
