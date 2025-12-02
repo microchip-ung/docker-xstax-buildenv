@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
 # Suppress time zone questions during build
 ENV TZ=Europe/Copenhagen
