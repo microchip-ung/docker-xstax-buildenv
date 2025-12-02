@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
 # Suppress time zone questions during build
 ENV TZ=Europe/Copenhagen
@@ -111,13 +111,6 @@ COPY ./npmrc /nvm/.npmrc
 
 # Set locale
 ENV LANG='en_US.UTF-8' LC_ALL='en_US.UTF-8'
-
-# buildroot-layer needs this for installing missing toolchains
-COPY ./mchp-install-pkg /usr/local/bin
-
-# Add simple grid client as this is needed to dispatch sub-jobs in the internal
-# mchp building environment
-COPY ./SimpleGridClient /usr/local/bin
 
 RUN git clone https://github.com/matthiasmiller/javascriptlint.git /tmp/jsl
 RUN cd /tmp/jsl; git checkout 5a245b453d68228878d6c283e12ef35327c45279; cd ./src; make -f Makefile.ref; cp ./Linux_All_DBG.OBJ/jsl /usr/local/bin/
